@@ -18,3 +18,5 @@ gingerit
 scipy
 moviepy
 SpeechRecognition
+pytesseract
+pillow
