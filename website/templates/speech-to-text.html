@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speech to Text</title>
+    <meta
+      name="description"
+      content="Looking for a free alternative to Dragon Naturally speaking for speech recognition? Voice Notepad lets you type with your voice in any language."
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta property="og:url" content="https://dictation.io/" />
+    <meta property="og:image" content="images/languages.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:image" content="images/languages.jpg" />
+    <meta name=" twitter:url" content="https://dictation.io/" />
+    <meta
+      name="twitter:title"
+      content="Voice Dictation - Type with your voice using Google Speech Recognition"
+    />
+    <meta name="twitter:creator" content="@labnol" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#4a90e2" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#4a90e2" />
+    <link
+      rel="chrome-webstore-item"
+      href="https://chrome.google.com/webstore/detail/ikjmfindklfaonkodbnidahohdfbdhkn"
+    />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3152670624293746",
+        enable_page_level_ads: !1,
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"
+    />
+    <link href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+      
+    <!-- Template Main CSS File -->
+    <link href="{{ url_for('static', filename='assets/css/style2.css') }}" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+          palette: {
+            popup: { background: "#efefef", text: "#404040" },
+            button: { background: "#8ec760", text: "#ffffff" },
+          },
+          content: {
+            href: "https://www.labnol.org/privacy",
+            message:
+              "Google serves cookies to analyze traffic to this site and for serving personalized ads.",
+          },
+        });
+      });
+    </script>
+    <link rel="canonical" href="https://dictation.io/speech" />
+    <style>
+      #navbar {
+        max-width: 100%;
+      }
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      #wait-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+      }
+      #wait,
+      #wait:after,
+      #wait:before {
+        border-radius: 50%;
+        border: 3px solid transparent;
+      }
+      #wait {
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        z-index: 1001;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        border-top-color: #3498db;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
+      #wait:after,
+      #wait:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-top-color: #e74c3c;
+        -webkit-animation: spin 3s linear infinite;
+        animation: spin 3s linear infinite;
+      }
+      #wait:after {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-top-color: #f9c922;
+        -webkit-animation: spin 1.5s linear infinite;
+        animation: spin 1.5s linear infinite;
+      }
+      #wait-wrapper .wait-section {
+        position: fixed;
+        top: 0;
+        width: 51%;
+        height: 100%;
+        background: #222;
+        z-index: 1000;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+      }
+      #wait-wrapper .wait-section.section-left {
+        left: 0;
+      }
+      #wait-wrapper .wait-section.section-right {
+        right: 0;
+      }
+      .loaded #wait-wrapper .wait-section.section-left,
+      .loaded #wait-wrapper .wait-section.section-right {
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .loaded #wait-wrapper .wait-section.section-right {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      .loaded #wait {
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+      .loaded #wait-wrapper {
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        transform: translateY(-100%);
+        -webkit-transition: all 0.3s 1s ease-out;
+        transition: all 0.3s 1s ease-out;
+      }
+      .no-js #wait-wrapper {
+        display: none;
+      }
+    </style>
+  </head>
+  <body data-smooth-scroll-offset="77">
+
+    <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <div class="logo">
+          <h1><a href="/">Alpha-Wingman</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+  
+        </div>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="/">Home</a></li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li class="dropdown"><a href="/#features"><span>Features</span><i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="/summary">Summarizer</a></li>
+                <li><a href="/stt">Speech To Text</a></li>
+                <li><a href="/grammarcheck">Grammar Checker</a></li>
+                <li><a href="/videosummarizer">Video Summarizer</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="/#team">Team</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+
+    <div id="wait-wrapper">
+      
+      <div id="wait"></div>
+      <div class="wait-section section-left"></div>
+      <div class="wait-section section-right"></div>
+    </div>
+    <div class="main-container">
+      <section class="switchable switchable--switch bg--primary space--sm">
+        <div class="container">
+          <br><br>
+          <div class="row" id="dictation">
+            <div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <script
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+              ></script>
+              <ins
+                class="adsbygoogle"
+                style="display: block"
+                data-ad-client="ca-pub-3152670624293746"
+                data-ad-slot="2661515976"
+                data-ad-format="vertical"
+                data-full-width-responsive="true"
+              ></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              <div class="input-select chrome langdd mt--2">
+                <select name="lang" id="lang" onchange="dictation('lang')">
+                  <option value selected="selected" disabled="disabled">
+                    Choose your Language
+                  </option>
+                </select>
+              </div>
+              
+              <div class="text-block mt--1">
+                <p class="log">
+                  <span>Click the microphone icon and speak</span>
+                  <img src="{{ url_for('static', filename='assets/img/mic.svg') }}" class="bars" />
+                </p>
+              </div>
+              <div class="text-block mt--2 teaser hidden-xs"></div>
+            </div>
+            <div class="col-lg-7 col-md-8 col-sm-8 col-xs-12">
+              <div class="notepad">
+                <div id="toolbar" class="hidden-xs">
+                  <span class="ql-formats"
+                    ><button class="ql-bold"></button>
+                    <button class="ql-italic"></button>
+                    <button class="ql-underline"></button> </span
+                  ><span class="ql-formats"
+                    ><select class="ql-color"></select>
+                    <select class="ql-background"></select>
+                    <select class="ql-align"></select> </span
+                  ><span class="ql-formats hidden-xs"
+                    ><button class="ql-list" value="ordered"></button>
+                    <button class="ql-list" value="bullet"></button>
+                    <button class="ql-indent" value="-1"></button>
+                    <button class="ql-indent" value="+1"></button> </span
+                  ><span class="ql-formats"
+                    ><button class="ql-direction" value="rtl"></button>
+                    <button class="ql-clean"></button
+                  ></span>
+                </div>
+                <div id="speech"></div>
+                <div class="action-buttons">
+                  <div class="left chrome">
+                    <a href="#" class="btn-mic btn btn--primary-1"
+                      ><span class="btn__text listen">Start</span>
+                      <div class="loading-indicator hide"></div
+                    ></a>
+                  </div>
+                  <div class="right btn-group">
+                    <a
+                      data-tooltip="Copy text to Clipboard"
+                      href="#"
+                      class="btn btn--sm btn--primary btn-clipboard"
+                      ><span class="btn__text btn__copy">Copy</span> </a
+                    ><a
+                      data-tooltip="Download File as Plain Text"
+                      href="#"
+                      onclick="dictation('save');return false;"
+                      class="btn btn--sm btn-save btn--primary"
+                      ><span class="btn__text">Save</span> </a
+                    ><a
+                      data-tooltip="Save as PDF, or Print"
+                      href="#"
+                      onclick="dictation('print');return false;"
+                      class="btn btn--sm btn-clear btn--primary"
+                      ><span class="btn__text">Print</span> </a
+                    ><a
+                      data-tooltip="Clear Notepad"
+                      href="#"
+                      onclick="dictation('clear');return false;"
+                      class="btn btn--sm btn-clear btn--primary"
+                      ><span class="btn__text">Clear</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="text-center-xs space--sm bg--primary-1 hidden-xs">
+      </footer>
+    </div>
+    <div class="hidden">
+      <div class="modal-instance">
+        <a class="btn modal-trigger nochrome" href="#"
+          ><span class="btn__text">Google Chrome</span></a
+        >
+        <div class="modal-container">
+          <div class="modal-content">
+            <div class="boxed boxed--lg text-center">
+              <h3>Google Chrome Required</h3>
+              <p class="lead">
+                Please open <a href="/">dictation.io</a> inside
+                <a href="https://www.google.com/chrome/" target="_blank"
+                  >Google Chrome</a
+                >
+                to use speech recognition.
+              </p>
+              <img src="{{ url_for('static', filename='assets/img/chrome.jpg') }}" alt="Google Chrome" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-instance">
+        <a class="btn modal-trigger nomic" href="#"
+          ><span class="btn__text">Allow Microphone</span></a
+        >
+        <div class="modal-container">
+          <div class="modal-content">
+            <div class="boxed boxed--lg text-center">
+              <h3>Cannot Access Microphone</h3>
+              <p class="lead">
+                Please follow
+                <a href="/help#mic" target="_blank">this guide</a> for
+                instructions on how to unblock your microphone.
+              </p>
+              <img
+                src="{{ url_for('static', filename='assets/img/unblock-microphone.png') }}"
+                width="604"
+                height="364"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-instance">
+        <a class="btn modal-trigger gist" href="#"
+          ><span class="btn__text">Publish Online</span></a
+        >
+        <div class="modal-container">
+          <div class="modal-content">
+            <div class="boxed boxed--lg text-center">
+              <p class="lead publishing">
+                Dictation is now publishing your note online. Please wait..
+              </p>
+              <p class="lead published hidden"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-instance">
+        <a class="btn modal-trigger tts" href="#"
+          ><span class="btn__text">Text to Speech</span></a
+        >
+        <div class="modal-container">
+          <div class="modal-content">
+            <div class="boxed boxed--lg">
+              <p class="lead">
+                Speed is the rate at which the selected voice will speak your
+                transcribed text while the pitch governs how high or low the
+                voice speaks.
+              </p>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label>Voice:</label>
+                  <div class="input-select">
+                    <select id="voiceselect"></select>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <label>Pitch:</label>
+                  <div class="input-number">
+                    <input
+                      type="number"
+                      name="pitch"
+                      id="pitch"
+                      placeholder="Pitch"
+                      value="10"
+                      min="1"
+                      max="20"
+                    />
+                    <div class="input-number__controls">
+                      <span class="input-number__increase"
+                        ><i class="stack-up-open"></i> </span
+                      ><span class="input-number__decrease"
+                        ><i class="stack-down-open"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <label>Speed:</label>
+                  <div class="input-number">
+                    <input
+                      type="number"
+                      name="rate"
+                      id="rate"
+                      placeholder="rate"
+                      value="10"
+                      min="1"
+                      max="20"
+                    />
+                    <div class="input-number__controls">
+                      <span class="input-number__increase"
+                        ><i class="stack-up-open"></i> </span
+                      ><span class="input-number__decrease"
+                        ><i class="stack-down-open"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <p>
+                    <br /><a
+                      class="btn btn--primary type--uppercase"
+                      href="#"
+                      onclick="dictation('tts');return false;"
+                      ><span class="btn__text btn-tts">Speak </span></a
+                    ><a
+                      class="btn btn--primary-2 type--uppercase"
+                      href="#"
+                      onclick="dictation('reset');return false;"
+                      ><span class="btn__text">Reset</span></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/1598275350397.css') }}" /><link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700"
+      rel="stylesheet"
+      type="text/css"
+    /><link
+      href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/1598275350397.js') }}"></script>
+      <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Alpha-Wingman</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Alpha-Wingman</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li class="dropdown"><a href="/#features"><span>Features</span><i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/summary">Summarizer</a></li>
+              <li><a href="/stt">Speech To Text</a></li>
+              <li><a href="/grammarcheck">Grammar Checker</a></li>
+              <li><a href="/videosummarizer">Video Summarizer</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/#team">Team</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Alpha-Wingman</span></h2>
+          <p class="animate__animated fanimate__adeInUp">
+            All the tools you need to organize your online life.      
+          </p>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>About</h2>
+          <p>Who we are</p>
+        </div>
+        <div class="row content" data-aos="fade-up">
+          <div class="col-lg-6 order-1 order-lg-2 text-center">
+            <img src="{{ url_for('static', filename='assets/img/features-4.png') }}" alt="" class="img-fluid">
+          </div>
+          <div class="col-lg-6">
+            <p>
+              A group of first-year UG Students at <a href="http://amfoss.in">amFOSS.in</a> . 
+            <br><ul>
+              <li><i class="ri-check-double-line"></i>We aim to make our mark in Web Development. </li>
+              <li><i class="ri-check-double-line"></i>We also support and carry out actions that promote social good. </li>
+            </ul><br>
+              
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+        
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Features</h2>
+          <p>Things it can do</p>
+        </div>
+        
+        <ul class="nav nav-tabs row d-flex">
+          <li class="nav-item col-3" data-aos="zoom-in">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
+              <i class="ri-gps-line"></i>
+              <h4 class="d-none d-lg-block">Summarizer</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
+              <i class="ri-body-scan-line"></i>
+              <h4 class="d-none d-lg-block">Speech To Text</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
+              <i class="ri-sun-line"></i>
+              <h4 class="d-none d-lg-block">Grammar Checker</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3" data-aos="zoom-in">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
+              <i class="ri-gps-line"></i>
+              <h4 class="d-none d-lg-block">Video Summarizer</h4>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up">
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Summarizer</h3>
+                <p class="fst-italic">
+                  Summarizer helps you to summarize, analyze and make a conclusion for your texts, your articles, your scientific texts, 
+                  your history texts as well as your well-structured analysis work of art.
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i><b>Free of Charge</b></li>
+                  <li><i class="ri-check-double-line"></i><b>Total Safety</b></li>
+                  <li><i class="ri-check-double-line"></i><b>Technology</b></li>
+                </ul>
+                <div class="text-center"><button type="button" class="btn btn-outline-primary"><a href="/summary">Try it out</a></button></div>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{{ url_for('static', filename='assets/img/features-1.png') }}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Speech to Text</h3>
+                <p class="fst-italic">
+                  Speech to Text accurately transcribes your speech to text in real time.
+                  Use the magic of speech recognition to write emails and documents.
+                </p>
+                <ul>
+                <b>
+                  <li><i class="ri-check-double-line"></i>Supports popular languages.</li>
+                  <li><i class="ri-check-double-line"></i>Total Safety</li>
+                  <li><i class="ri-check-double-line"></i>Formatable</li>
+                  <li><i class="ri-check-double-line"></i>Downloadable text after conversion</li> 
+                </b>
+                  
+                </ul>
+                <div class="text-center"><button type="button" class="btn btn-outline-primary"><a href="/stt">Try it out</a></button></div>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="https://nordicapis.com/wp-content/uploads/5-Best-Speech-to-Text-APIs-2-e1615383933700.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Grammar Checker</h3>
+                <p class="fst-italic">
+                  Check your English text for grammar, spelling, and punctuation errors with our free grammar checker.
+                </p>
+                <ul>
+                <b>
+                  <li><i class="ri-check-double-line"></i>Fast and consistent</li>
+                  <li><i class="ri-check-double-line"></i>Fix tricky spelling errors</li>
+                  <li><i class="ri-check-double-line"></i>Enhance your writing</li>
+                  </b>
+                </ul>
+                
+                <div class="text-center"><button type="button" class="btn btn-outline-primary"><a href="/grammarcheck">Try it out</a></button></div>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="https://sites.google.com/site/englishgrammarchecks/_/rsrc/1511955305404/home/online-grammar-checker-tools.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Video Summarizer</h3>
+                <p class="fst-italic">
+                  Summarizes the video for you.
+                </p>
+                <ul>
+                <b>
+                  <li><i class="ri-check-double-line"></i>Fast and consistent</li>
+                  <li><i class="ri-check-double-line"></i>Accurate</li>
+                  </b>
+                </ul>
+                
+                <div class="text-center"><button type="button" class="btn btn-outline-primary"><a href="/videosummarizer">Try it out</a></button></div>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="https://cdn.discordapp.com/attachments/857330652784885790/858593757338140672/how-can-you-convert-video-to-text-easily.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </section><!-- End Features Section -->
+   
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Team</h2>
+          <p>Our Hardworking Team</p>
+        </div>
+
+        <div class="row">
+
+       
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="https://api.amfoss.in/static/uploads/images/dp/78a482a9-0412-4ff7-b1f7-1377581e8472.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://github.com/arungovindm2001/" target=__blank><i class="bi bi-github"></i></a>
+                  <a href="https://gitlab.com/arungovindm2001/" target=__blank><i class= "fa fa-gitlab"></i></a>
+                  <!-- <a href="" target=__blank><i class="bi bi-linkedin"></i></a> -->
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Arun Govind M</h4>
+                <span>Member of amFOSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="https://avatars.githubusercontent.com/u/69108486?v=4" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://github.com/kingjuno/" target=__blank><i class="bi bi-github"></i></a>
+                  <a href="https://gitlab.com/kingjuno/" target=__blank><i class= "fa fa-gitlab"></i></a>
+                  <!-- <a href="" target=__blank><i class="bi bi-linkedin"></i></a> -->
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Geo Jolly</h4>
+                <span>Member of amFOSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="https://avatars.githubusercontent.com/u/73281663?v=4" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://github.com/gopik820/" target=__blank><i class="bi bi-github"></i></a>
+                  <a href="https://gitlab.com/gopik820/" target=__blank><i class= "fa fa-gitlab"></i></a>
+                  <!-- <a href="" target=__blank><i class="bi bi-linkedin"></i></a> -->
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>K Gopikrishna</h4>
+                <span>Member of amFOSS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+   
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Alpha-Wingman</h3>
+      <div class="social-links">
+        <a href="https://github.com/arungovindm2001/Alpha-Wingman" class="github"><i class="bx bxl-github"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Alpha-Wingman</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
