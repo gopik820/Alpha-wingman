@@ -20,3 +20,4 @@ moviepy
 SpeechRecognition
 pytesseract
 pillow
+youtube_transcript_api

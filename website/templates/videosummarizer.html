@@ -70,18 +70,18 @@
           <ul>
             <li><a class="nav-link scrollto" href="/">Home</a></li>
             <li><a class="nav-link scrollto" href="/#about">About</a></li>
-            <li class="dropdown">
-              <a href="/#features"
-                ><span>Features</span><i class="bi bi-chevron-down"></i
-              ></a>
+            <li class="dropdown"><a href="/#features"><span>Features</span><i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="/summary">Summarizer</a></li>
                 <li><a href="/stt">Speech To Text</a></li>
                 <li><a href="/grammarcheck">Grammar Checker</a></li>
                 <li><a href="/videosummarizer">Video Summarizer</a></li>
+                <li><a href="/imagetext">Notes Converter</a></li>
+                <li><a href="/plag">Plagiarism Checker</a></li>
               </ul>
             </li>
             <li><a class="nav-link scrollto" href="/#team">Team</a></li>
+  
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -89,41 +89,67 @@
       </div>
     </header>
     <!-- End Header -->
-    <br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <div class="container">
-      <form
-        style="
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        "
-        method="post"
-        action="/videoresult"
-        enctype="multipart/form-data"
-      >
-        <div class="form-group">
-          <label>
-            You may also allow to clear the selection!
-            <span id="clear" class="btn btn-default btn-xs">
-              Clear the file name
-            </span>
-          </label>
-          <input type="file" name="file" />
+    <div style="padding: 100px" class="container">
+      <div class="row">
+        <center>
+        <div style="background-color: #f4f8f9; margin-top: 1px" class="col-sm">
+          <br>
+          <p><h3>Summarize your Videos <img
+            style="width: 35px; height: 35px"
+            class="icon"
+            src="{{url_for('static', filename='fileicon.svg')}}"
+          /></h3></p>
+          <p>
+            <h5>
+            Use our summarizer to quickly convert
+            lengthy videos into summarized text.<br>
+            You can upload the video or paste the link to the youtube video directly.
+            <br><br>
+          </h5>
+          </p>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        </center>
+        <div style="margin-top: 50px" class="col-sm">
+          <form action="/ytsummaryresults" method="post">
+            <p>Youtube Video Link:</p>
+            <p>
+              <input
+                style="text-align: left"
+                class="text-box"
+                type="text"
+                name="link"
+                id="length"
+              />
+            </p>
+            <p style="float: left">
+              <input
+                class="button"
+                type="submit"
+                name="link"
+                value="Get Summary"
+                id="length"
+              />
+            </p>
+          </form>
+        </div>
+        
+      </div>
+      <div class="container">
+        <form
+          
+          method="post"
+          action="/videoresult"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            
+            <input type="file" name="file" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
-    <script>
-      $("#cleardemo").filestyle({
-        buttonText: " Choose a file from System",
-        buttonName: "btn-info",
-      });
-
-      $("#clear").click(function () {
-        $("#cleardemo").filestyle("clear");
-      });
-    </script>
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
