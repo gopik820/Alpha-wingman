@@ -137,12 +137,7 @@ Contributions are what make the open source community such an amazing place to b
 
 Important decisions regarding the project are taken by the following maintainers.
 
-| Geo Jolly                                                                                    | K Gopikrishna                                                                                | Arun Govind M                                                                                |
+| K Gopikrishna                                                                                | Arun Govind M                                                                                | Sai Siddharth C                                                                              |
 | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| <img  height="100"  width="100"  src="https://avatars.githubusercontent.com/u/69108486?v=4"> | <img  height="100"  width="100"  src="https://avatars.githubusercontent.com/u/73281663?v=4"> | <img  height="100"  width="100"  src="https://avatars.githubusercontent.com/u/67337602?v=4"> |
-| [@kingjuno](https://github.com/kingjuno)                                                     | [@gopik820](https://github.com/gopik820)                                                     | [@arungovindm2001](https://github.com/arungovindm2001)                                       |
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[product-screenshot]: https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/563/749/datas/gallery.jpg
+| <img  height="100"  width="100"  src="https://avatars.githubusercontent.com/u/73281663?v=4"> | <img  height="100"  width="100"  src="https://avatars.githubusercontent.com/u/67337602?v=4"> | <img  height="100"  width="100"  src="https://avatars.githubusercontent.com/u/53928899?v=4"> |
+| [@gopik820](https://github.com/gopik820)                                                     | [@arungovindm2001](https://github.com/arungovindm2001)                                       | [@siddharthc30](https://github.com/siddharthc30)                                             |
