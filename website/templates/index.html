@@ -90,23 +90,29 @@
       </div>
     </header>
     <!-- End Header -->
-
+    
     <div style="padding: 100px" class="container">
       <div class="row">
-        <div style="background-color: #f4f8f9; margin-top: 80px" class="col-sm">
-          <img
-            style="width: 75px; height: 135px"
+        <center>
+        <div style="background-color: #f4f8f9; margin-top: 1px" class="col-sm">
+          <br>
+          <p><h3>Summarize Articles, Speeches, and more! <img
+            style="width: 35px; height: 35px"
             class="icon"
             src="{{url_for('static', filename='fileicon.svg')}}"
-          />
-          <p>Summarize Articles, Speeches, and more!</p>
+          /></h3></p>
           <p>
-            Use our summarizer to quickly convert<br />
-            lengthy text into short, summarized text. <br />Decrease text by up
-            to 80%!
+            <h5>
+                Use our summarizer to quickly convert
+                lengthy text into short, summarized text. <br />Decrease text by up
+                to 80%!
+            <br><br>
+          </h5>
           </p>
         </div>
-        <div style="margin-top: 130px" class="col-sm">
+        </center>
+        <div style="margin-top: 50px" class="col-sm">
+          <center>
           <form action="/results" method="post">
             <p>Text Link:</p>
             <p>
@@ -118,7 +124,7 @@
                 id="length"
               />
             </p>
-            <p style="float: left">
+            <p>
               <input
                 class="button"
                 type="submit"
@@ -126,8 +132,6 @@
                 value="Short Summary"
                 id="length"
               />
-            </p>
-            <p style="float: right">
               <input
                 class="button"
                 type="submit"
@@ -137,8 +141,9 @@
               />
             </p>
           </form>
+        </center>
         </div>
-      </div>
+      
     </div>
 
     <script

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Summarizer</title>
+    <title>Video Summarizer</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -110,6 +110,7 @@
         </div>
         </center>
         <div style="margin-top: 50px" class="col-sm">
+          <center>
           <form action="/ytsummaryresults" method="post">
             <p>Youtube Video Link:</p>
             <p>
@@ -121,7 +122,8 @@
                 id="length"
               />
             </p>
-            <p style="float: left">
+            
+            <p>
               <input
                 class="button"
                 type="submit"
@@ -130,13 +132,15 @@
                 id="length"
               />
             </p>
+          </center>
           </form>
         </div>
         
+        <h3><center>OR</center></h3>
       </div>
+      <center>
       <div class="container">
-        <form
-          
+        <form         
           method="post"
           action="/videoresult"
           enctype="multipart/form-data"
@@ -145,9 +149,11 @@
             
             <input type="file" name="file" />
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <br>
+          <button type="submit" class="button">Submit</button>
         </form>
       </div>
+      </center> 
     </div>
     
 
