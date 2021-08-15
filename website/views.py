@@ -9,6 +9,9 @@ from .video2text import video2text
 from PIL import Image
 import pytesseract
 
+from scipy import stats
+from youtube_transcript_api import YouTubeTranscriptApi
+
 views = Blueprint('views', __name__)
 
 
@@ -55,6 +58,27 @@ def results():
             length = "long"
         created_summary = get_summary(link, length)
     return render_template("results.html", summary=created_summary)
+
+
+@views.route('/ytsummary')
+def ytsummary():
+    return render_template('ytsummary.html')
+
+
+@views.route('/ytsummaryresults', methods=['GET', 'POST'])
+def ytresults():
+    if request.method == 'POST':
+        youtube_video = request.form["link"]
+
+        video_id = youtube_video.split("=")[1]
+
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+
+        result = ""
+        for i in transcript:
+            result += ' ' + i['text']
+
+    return render_template("ytsummaryresult.html", summary=result)
 
 
 @views.route('/videosummarizer')
