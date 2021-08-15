@@ -1,179 +1,167 @@
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<!DOCTYPE html>
+<html>
 
-        <title>Image to Text Result</title>
-        <meta content="" name="description" />
-        <meta content="" name="keywords" />
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-        <!-- Google Fonts -->
-        <link
-          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-          rel="stylesheet"
-        />
+  <title>Image to Text Result</title>
 
-        <!-- Vendor CSS Files -->
-        <link
-          href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css') }}"
-          rel="stylesheet"
-        />
-        <link
-          href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}"
-          rel="stylesheet"
-        />
-        <link
-          href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}"
-          rel="stylesheet"
-        />
-        <link
-          href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
-          rel="stylesheet"
-        />
-        <link
-          href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}"
-          rel="stylesheet"
-        />
-        <link
-          href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}"
-          rel="stylesheet"
-        />
-        <link
-          href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css') }}"
-          rel="stylesheet"
-        />
-        <link
-          href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}"
-          rel="stylesheet"
-        />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
 
-        <!-- Template Main CSS File -->
-        <link
-          href="{{ url_for('static', filename='assets/css/style2.css') }}"
-          rel="stylesheet"
-        />
-      </head>
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
 
-      <body>
-        <!-- ======= Header ======= -->
-        <header
-          id="header"
-          class="fixed-top d-flex align-items-center header-transparent"
-        >
-          <div
-            class="container d-flex align-items-center justify-content-between"
-          >
-            <div class="logo">
-              <h1><a href="/">Alpha-Wingman</a></h1>
-            </div>
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets/css/style2.css') }}" rel="stylesheet" />
+</head>
 
-            <nav id="navbar" class="navbar">
-              <ul>
-                <li><a class="nav-link scrollto" href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="/#about">About</a></li>
-                <li class="dropdown">
-                  <a href="/#features"
-                    ><span>Features</span><i class="bi bi-chevron-down"></i
-                  ></a>
-                  <ul>
-                    <li><a href="/summary">Summarizer</a></li>
-                    <li><a href="/stt">Speech To Text</a></li>
-                    <li><a href="/grammarcheck">Grammar Checker</a></li>
-                    <li><a href="/videosummarizer">Video Summarizer</a></li>
-                    <li><a href="/imagetext">Notes Converter</a></li>
-                    <li><a href="/plag">Plagiarism Checker</a></li>
-                  </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="/#team">Team</a></li>
-              </ul>
-              <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- .navbar -->
-          </div>
-        </header>
-        <!-- End Header -->
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1><a href="/">Alpha-Wingman</a></h1>
+      </div>
 
-        <br><br><br><br><br><br><br>
-        <center><h2>Result</h2>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12">
-              <textarea
-                id="textValue"
-                readonly
-                name="result"
-                rows="8"
-                cols="175"
-                value="">
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li class="dropdown">
+            <a href="/#features"><span>Features</span><i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/summary">Summarizer</a></li>
+              <li><a href="/stt">Speech To Text</a></li>
+              <li><a href="/grammarcheck">Grammar Checker</a></li>
+              <li><a href="/videosummarizer">Video Summarizer</a></li>
+              <li><a href="/imagetext">Notes Converter</a></li>
+              <li><a href="/plag">Plagiarism Checker</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/#team">Team</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <br><br><br><br><br><br><br>
+  <center>
+    <h2>Result</h2>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <textarea id="textValue" readonly name="result" rows="8" cols="175" value="">
                 {{ text }}
               </textarea>
-            </div>
-            <div id="editor"></div>
-          </div>
         </div>
-        </center>
-        <br><br><br>
-        <center>
-        <form method="get" accept-charset="utf-8">
-          <button type="button" class="btn btn-info" onclick="downloadText()">
-            Download
-          </button>
-          <button type="button" class="btn btn-info" id="generatePDF">
-            Generate PDF
-          </button>
-        </form>
-        </center>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+        <div id="editor"></div>
+      </div>
+    </div>
+  </center>
+  <br><br><br>
+  <center>
+    <form method="get" accept-charset="utf-8">
+      <button type="button" class="btn btn-info" onclick="downloadText()">
+        Download as TXT
+      </button>
+      <button type="button" class="btn btn-info" id="generatePDF">
+        Generate PDF
+      </button>
+      <button type="button" class="btn btn-info" onclick="copy()">
+        Copy to Clipboard
+      </button>
+    </form>
+  </center>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 
-        <script>
-          var doc = new jsPDF();
-          var specialElementHandlers = {
-            "#editor": function (element, renderer) {
-              return true;
-            },
-          };
+  <script>
+    function copy() {
+      var copyText = document.getElementById("textValue");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied to clipboard\n" + copyText.value);
+    }
+  </script>
 
-          //margins.left, // x coord   margins.top, { // y coord
-          $("#generatePDF").click(function () {
-            doc.fromHTML($("#textValue").html(), 15, 15, {
-              width: 700,
-              elementHandlers: specialElementHandlers,
-            });
-            doc.save("result.pdf");
-          });
-        </script>
+  <script>
+    var doc = new jsPDF();
+    var specialElementHandlers = {
+      "#editor": function (element, renderer) {
+        return true;
+      },
+    };
 
-        <script>
-          function downloadText() 
-          {
-            var text = document.getElementById("textValue").value;
-            var val = "data:x-application/text," + escape(text);
-            window.open(val);
-          }
-        </script>
+    $("#generatePDF").click(function () {
+      doc.fromHTML($("#textValue").html(), 15, 15, {
+        width: 700,
+        elementHandlers: specialElementHandlers,
+      });
+      var newDate = new Date();
+      var datetime = newDate.today() + " " + newDate.timeNow();
+      doc.save(datetime+".pdf");
+    });
+  </script>
 
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          type="text/javascript"
-          src="{{ url_for('static', filename='index.js') }}"
-        ></script>
-        <!-- Vendor JS Files -->
-        <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
-        <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
-        <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script>
+    Date.prototype.today = function () {
+      return ((this.getDate() < 10) ? "0" : "") + this.getDate() + "/" + (((this.getMonth() + 1) < 10) ? "0" : "") + (this.getMonth() + 1) + "/" + this.getFullYear();
+    }
+    Date.prototype.timeNow = function () {
+      return ((this.getHours() < 10) ? "0" : "") + this.getHours() + ":" + ((this.getMinutes() < 10) ? "0" : "") + this.getMinutes() + ":" + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
+    }
+    function downloadText() {
+      var text = document.getElementById("textValue").value;
+      var newDate = new Date();
+      var datetime = newDate.today() + " " + newDate.timeNow();
+      download(datetime + ".txt", text);
+    }
 
-        <!-- Template Main JS File -->
-        <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
-      </body>
-    </html>
-  </head>
+    function download(filename, text) {
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+
+      element.style.display = 'none';
+      document.body.appendChild(element);
+
+      element.click();
+
+      document.body.removeChild(element);
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+
+</html>
+</head>
+
 </html>
